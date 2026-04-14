@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>Onyx Care | El Ecosistema de Adherencia Médica</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      h1,
+      h2,
+      h3,
+      .brand {
+        font-family: "Syne", sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .amber-glow {
+        box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+      }
+      .grid-bg {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0f1115] text-slate-200 grid-bg">
+    <nav
+      class="flex justify-between items-center px-8 py-8 sticky top-0 z-50 bg-[#0f1115]/80 backdrop-blur-md"
+    >
+      <div
+        class="brand text-2xl font-extrabold tracking-tighter text-white uppercase italic"
+      >
+        Onyx_Care
+      </div>
+      <div
+        class="hidden md:flex space-x-10 text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500"
+      >
+        <a href="#dispositivo" class="hover:text-amber-500 transition"
+          >El Hardware</a
+        >
+        <a href="#proceso" class="hover:text-amber-500 transition"
+          >Logística Farmacéutica</a
+        >
+        <a href="#app" class="hover:text-amber-500 transition">App & Control</a>
+      </div>
+      <button
+        class="bg-white text-black px-6 py-2 rounded-full text-xs font-bold hover:bg-amber-500 transition duration-300"
+      >
+        SOLICITAR DEMO
+      </button>
+    </nav>
+
+    <section
+      class="max-w-7xl mx-auto px-8 py-16 grid lg:grid-cols-2 gap-20 items-center"
+    >
+      <div>
+        <span
+          class="text-amber-500 text-xs font-bold tracking-[0.4em] uppercase mb-4 block"
+          >Smart Adherence System</span
+        >
+        <h1
+          class="text-6xl md:text-8xl font-extrabold leading-none text-white mb-8"
+        >
+          Salud <span class="text-amber-500 italic">conectada.</span>
+        </h1>
+        <p class="text-xl text-slate-400 font-light leading-relaxed mb-10">
+          No es solo un pastillero. Es un puente entre la farmacia, el paciente
+          y su familia, garantizando que el tratamiento se cumpla al 100%.
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <a
+            href="#proceso"
+            class="bg-amber-500 text-black px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-tighter hover:scale-105 transition"
+          >
+            Ver cómo funciona
+          </a>
+          <div class="flex items-center gap-4">
+            <div
+              class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center"
+            >
+              <i class="fas fa-play text-amber-500 text-xs"></i>
+            </div>
+            <span
+              class="text-xs font-bold tracking-widest text-slate-500 uppercase"
+              >Ver video</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="relative" id="dispositivo">
+        <div
+          class="absolute -inset-20 bg-amber-500/5 blur-[100px] rounded-full"
+        ></div>
+        <div class="glass-card rounded-[3rem] p-8 md:p-12 relative amber-glow">
+          <div class="flex justify-between items-start mb-10">
+            <div>
+              <h3 class="text-white font-bold text-xl uppercase">Onyx One</h3>
+              <p class="text-amber-500 text-[10px] font-bold tracking-widest">
+                CALENDARIO ACTIVO
+              </p>
+            </div>
+            <div
+              class="bg-slate-900 px-4 py-2 rounded-xl border border-white/10 text-right"
+            >
+              <p class="text-[9px] text-slate-500 font-bold uppercase">
+                Próxima dosis
+              </p>
+              <p class="text-sm font-mono text-green-400">14:00 PM</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-7 gap-3 mb-8">
+            <script>
+              for (let i = 1; i <= 28; i++) {
+                let isPast = i < 14;
+                let isToday = i === 14;
+                document.write(`
+                                <div class="aspect-square rounded-xl border ${isToday ? "border-amber-500 bg-amber-500/20 amber-glow animate-pulse" : "border-white/5 bg-white/5"} flex items-center justify-center relative">
+                                    <span class="text-[10px] ${isToday ? "text-amber-500 font-bold" : isPast ? "text-slate-700" : "text-slate-400"}">${i}</span>
+                                    ${isPast ? '<i class="fas fa-check text-[6px] absolute top-1 right-1 text-slate-700"></i>' : ""}
+                                </div>
+                            `);
+              }
+            </script>
+          </div>
+
+          <div
+            class="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10"
+          >
+            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest">
+              Sensores de peso y luz operativos
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="py-32 bg-white/5">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 uppercase">
+            Un ecosistema cerrado de seguridad
+          </h2>
+          <p class="text-slate-400 max-w-2xl mx-auto font-light">
+            Nuestra solución no recae en el usuario. Creamos una red de
+            seguridad donde el dispositivo es el centro.
+          </p>
+        </div>
+
+        <div
+          class="grid md:grid-cols-3 gap-1px bg-white/10 border border-white/10 rounded-[2rem] overflow-hidden"
+        >
+          <div class="bg-[#0f1115] p-12 hover:bg-white/5 transition">
+            <div class="text-amber-500 text-3xl mb-8">01</div>
+            <h4 class="text-xl font-bold text-white mb-4">
+              Configuración Farmacéutica
+            </h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              El dispositivo no se configura en casa. Una vez adquirido, la
+              farmacia carga el plan de medicación vía software. Cada casilla
+              queda asignada a una pastilla, hora y dosis específica.
+            </p>
+            <ul
+              class="text-[10px] text-slate-500 space-y-2 uppercase tracking-tighter"
+            >
+              <li>
+                <i class="fas fa-check text-amber-500 mr-2"></i> Error humano
+                eliminado
+              </li>
+              <li>
+                <i class="fas fa-check text-amber-500 mr-2"></i> Validación
+                profesional
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-[#0f1115] p-12 hover:bg-white/5 transition">
+            <div class="text-amber-500 text-3xl mb-8">02</div>
+            <h4 class="text-xl font-bold text-white mb-4">
+              Hardware con Bio-Sensores
+            </h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              El dispositivo detecta si has abierto la casilla iluminada. Si
+              abres una incorrecta, los sensores de vacío detectan el error y el
+              altavoz emite una alerta crítica inmediata.
+            </p>
+            <ul
+              class="text-[10px] text-slate-500 space-y-2 uppercase tracking-tighter"
+            >
+              <li>
+                <i class="fas fa-check text-amber-500 mr-2"></i> Sensor de
+                vaciado infrarrojo
+              </li>
+              <li>
+                <i class="fas fa-check text-amber-500 mr-2"></i> Altavoz con
+                reintento (5 min)
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-[#0f1115] p-12 hover:bg-white/5 transition">
+            <div class="text-amber-500 text-3xl mb-8">03</div>
+            <h4 class="text-xl font-bold text-white mb-4">
+              Historial en la Nube
+            </h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              La App refleja en tiempo real lo que ocurre físicamente. Si un
+              familiar olvida su dosis, el cuidador recibe una notificación push
+              después del tercer aviso sonoro del dispositivo.
+            </p>
+            <ul
+              class="text-[10px] text-slate-500 space-y-2 uppercase tracking-tighter"
+            >
+              <li>
+                <i class="fas fa-check text-amber-500 mr-2"></i> Log de
+                actividad inalterable
+              </li>
+              <li>
+                <i class="fas fa-check text-amber-500 mr-2"></i> Control remoto
+                familiar
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="app"
+      class="max-w-7xl mx-auto px-8 py-32 grid lg:grid-cols-2 gap-20 items-center"
+    >
+      <div class="order-2 lg:order-1">
+        <div class="relative inline-block">
+          <div class="absolute -inset-10 bg-blue-500/10 blur-3xl"></div>
+          <div
+            class="w-72 h-[580px] bg-black rounded-[3rem] border-[12px] border-slate-800 shadow-2xl relative overflow-hidden"
+          >
+            <div class="bg-white h-full w-full p-6 text-slate-900">
+              <div class="flex justify-between items-center mb-8">
+                <i class="fas fa-bars text-slate-400"></i>
+                <div class="w-8 h-8 rounded-full bg-slate-200"></div>
+              </div>
+              <h4 class="font-black text-2xl mb-2 italic">Reporte Diario</h4>
+              <p class="text-[10px] text-slate-400 uppercase font-bold mb-6">
+                Paciente: Ana García
+              </p>
+
+              <div class="space-y-4">
+                <div
+                  class="p-4 bg-slate-50 rounded-2xl border border-slate-100"
+                >
+                  <p
+                    class="text-[9px] font-bold text-green-600 mb-1 tracking-widest"
+                  >
+                    TOMADA - 08:00
+                  </p>
+                  <p class="text-xs font-bold">Casilla 14 - Desayuno</p>
+                  <p class="text-[9px] text-slate-400">
+                    Confirmado por sensor óptico
+                  </p>
+                </div>
+                <div
+                  class="p-4 bg-amber-50 rounded-2xl border border-amber-100"
+                >
+                  <p
+                    class="text-[9px] font-bold text-amber-600 mb-1 tracking-widest"
+                  >
+                    PENDIENTE - 14:00
+                  </p>
+                  <p class="text-xs font-bold">Casilla 14 - Almuerzo</p>
+                  <p class="text-[9px] text-slate-400">
+                    Dispositivo en modo aviso (Luz)
+                  </p>
+                </div>
+                <div class="p-4 bg-red-50 rounded-2xl border border-red-100">
+                  <p
+                    class="text-[9px] font-bold text-red-600 mb-1 tracking-widest"
+                  >
+                    ALERTA CRÍTICA
+                  </p>
+                  <p class="text-xs font-bold">Error de compartimento</p>
+                  <p class="text-[9px] text-slate-400">
+                    Intento de apertura casilla 15
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <h2 class="text-5xl font-extrabold text-white mb-8">
+          Tranquilidad para la familia.
+        </h2>
+        <div class="space-y-12">
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500 flex-shrink-0"
+            >
+              <i class="fas fa-shield-alt text-xl"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-white mb-2">
+                Historial Incorruptible
+              </h4>
+              <p class="text-slate-400 text-sm">
+                La App no solo dice "se tomó la pastilla", dice "se detectó el
+                vaciado de la casilla correcta". Es un historial basado en
+                hechos físicos, no en recordatorios manuales.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500 flex-shrink-0"
+            >
+              <i class="fas fa-users-cog text-xl"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-white mb-2">
+                Configuración Multidispositivo
+              </h4>
+              <p class="text-slate-400 text-sm">
+                Desde la App puedes configurar los horarios del medicamento y
+                sincronizarlos con el Onyx One por Bluetooth o WiFi, o dejar que
+                tu farmacéutico lo haga por ti remotamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 bg-black/50">
+      <div
+        class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="brand text-xl font-extrabold text-white italic">
+          Onyx_Care
+        </div>
+        <p
+          class="text-slate-500 text-[10px] font-bold tracking-[0.4em] uppercase"
+        >
+          Tecnología de precisión para la vida | 2026
+        </p>
+        <div class="flex gap-6 text-slate-400">
+          <i class="fab fa-instagram hover:text-amber-500 cursor-pointer"></i>
+          <i class="fab fa-linkedin hover:text-amber-500 cursor-pointer"></i>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
